@@ -6,6 +6,9 @@ const FileUpload = ({ account, contract }) => {
     const [file, setFile] = useState(null);
     const [fileName, setFileName] = useState("No File Uploaded");
 
+    const PINATA_API_KEY = process.env.REACT_APP_PINATA_API_KEY;
+    const PINATA_SECRET_API_KEY = process.env.REACT_APP_PINATA_SECRET_API_KEY;
+
     const handleSubmit = async (event) => {
         event.preventDefault();
         if (file) {
@@ -18,8 +21,8 @@ const FileUpload = ({ account, contract }) => {
                     url: "https://api.pinata.cloud/pinning/pinFileToIPFS",
                     data: formData,
                     headers: {
-                        pinata_api_key: `f0cac759351830287e52`,
-                        pinata_secret_api_key: `b07f7647fcf32dc607a6bd17b895bf36fa2c4c3f1de6a271bf229c5521543012`,
+                        pinata_api_key: PINATA_API_KEY,
+                        pinata_secret_api_key: PINATA_SECRET_API_KEY,
                         "Content-Type": "multipart/form-data",
                     },
                 });
