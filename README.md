@@ -57,4 +57,3 @@ The `Upload.sol` smart contract is responsible for storing file metadata (IPFS l
 
 ## 📄 License  
 This project is licensed under the **MIT License**.  
-```
